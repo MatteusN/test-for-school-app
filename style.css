@@ -1,0 +1,333 @@
+/* From Uiverse.io by zanina-yassine */ 
+.card {
+    width: 350px;
+    height: 235px;
+    position: relative;
+    padding: 25px;
+    background: radial-gradient(178.94% 106.41% at 26.42% 106.41%, #FFF7B1 0%, rgba(255, 255, 255, 0) 71.88%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #FFFFFF;
+    box-shadow: 0px 155px 62px rgba(0, 0, 0, 0.01), 0px 87px 52px rgba(0, 0, 0, 0.05), 0px 39px 39px rgba(0, 0, 0, 0.09), 0px 10px 21px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 23px;
+    transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .container {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    right: -35px;
+    top: -50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.7);
+  }
+  
+  .cloud {
+    width: 250px;
+  }
+  
+  .front {
+    padding-top: 45px;
+    margin-left: 25px;
+    display: inline;
+    position: absolute;
+    z-index: 11;
+    animation: clouds 8s infinite;
+    animation-timing-function: ease-in-out;
+  }
+  
+  .back {
+    margin-top: -30px;
+    margin-left: 150px;
+    z-index: 12;
+    animation: clouds 12s infinite;
+    animation-timing-function: ease-in-out;
+  }
+  
+  .right-front {
+    width: 45px;
+    height: 45px;
+    border-radius: 50% 50% 50% 0%;
+    background-color: #4c9beb;
+    display: inline-block;
+    margin-left: -25px;
+    z-index: 5;
+  }
+  
+  .left-front {
+    width: 65px;
+    height: 65px;
+    border-radius: 50% 50% 0% 50%;
+    background-color: #4c9beb;
+    display: inline-block;
+    z-index: 5;
+  }
+  
+  .right-back {
+    width: 50px;
+    height: 50px;
+    border-radius: 50% 50% 50% 0%;
+    background-color: #4c9beb;
+    display: inline-block;
+    margin-left: -20px;
+    z-index: 5;
+  }
+  
+  .left-back {
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50% 0% 50%;
+    background-color: #4c9beb;
+    display: inline-block;
+    z-index: 5;
+  }
+  
+  .sun {
+    width: 120px;
+    height: 120px;
+    background: -webkit-linear-gradient(to right, #fcbb04, #fffc00);
+    background: linear-gradient(to right, #fcbb04, #fffc00);
+    border-radius: 60px;
+    display: inline;
+    position: absolute;
+  }
+  
+  .sunshine {
+    animation: sunshines 2s infinite;
+  }
+  
+  @keyframes sunshines {
+    0% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+  
+    100% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes clouds {
+    0% {
+      transform: translateX(15px);
+    }
+  
+    50% {
+      transform: translateX(0px);
+    }
+  
+    100% {
+      transform: translateX(15px);
+    }
+  }
+  
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .card-header span:first-child {
+    word-break: break-all;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 135%;
+    color: rgba(87, 77, 51, 0.66);
+  }
+  
+  .card-header span:last-child {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 135%;
+    color: rgba(87, 77, 51, 0.33);
+  }
+  
+  .temp {
+    position: absolute;
+    left: 25px;
+    bottom: 12px;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 77px;
+    color: rgba(87, 77, 51, 1);
+  }
+  
+  .temp-scale {
+    width: 80px;
+    height: 36px;
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.06);
+    border-radius: 9px;
+  }
+  
+  .temp-scale span {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 134.49%;
+    color: rgba(87, 77, 51, 0.66);
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007BFF;
+    padding: 15px 20px;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsiivinen navigaatio */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #007BFF;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 15px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+/* From Uiverse.io by zanina-yassine */ 
+/* Remove this container when use*/
+.component-title {
+  width: 100%;
+  position: absolute;
+  z-index: 999;
+  top: 30px;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #888;
+  text-align: center;
+}
+
+.tab-container {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  padding: 2px;
+
+  background-color: #dadadb;
+  border-radius: 9px;
+  width: 50vh;
+}
+
+.indicator {
+  content: "";
+  width: 130px;
+  height: 28px;
+  background: #ffffff;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  z-index: 9;
+  border: 0.5px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12), 0px 3px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 7px;
+  transition: all 0.2s ease-out;
+}
+
+.tab {
+  width: 130px;
+  height: 28px;
+  position: absolute;
+  z-index: 99;
+  outline: none;
+  opacity: 0;
+}
+
+.tab_label {
+  width: 130px;
+  height: 28px;
+
+  position: relative;
+  z-index: 999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+
+  font-size: 0.75rem;
+  opacity: 0.6;
+
+  cursor: pointer;
+}
+
+.tab--1:checked ~ .indicator {
+  left: 2px;
+}
+
+.tab--2:checked ~ .indicator {
+  left: calc(130px + 2px);
+}
+
+.tab--3:checked ~ .indicator {
+  left: calc(130px * 2 + 2px);
+}
